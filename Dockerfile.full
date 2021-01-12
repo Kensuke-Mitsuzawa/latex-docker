@@ -1,4 +1,6 @@
 FROM blang/latex:ctanbasic
 MAINTAINER Benedikt Lang <mail@blang.io>
 
+RUN wget https://mirrors.ircam.fr/pub/CTAN/systems/texlive/tlnet/update-tlmgr-latest.sh -o update-tlmgr-latest.sh -P /home
+RUN bash /home/update-tlmgr-latest.sh -- --upgrade
 RUN tlmgr install scheme-full
